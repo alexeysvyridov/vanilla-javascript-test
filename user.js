@@ -34,8 +34,9 @@ const getUser = async (id) =>  {
         modalContainer.innerHTML += modalBlock;
       }
     const initUser = () => {
-         const id = JSON.parse(window.localStorage.getItem("user"));
-         Promise.resolve(getUser(id)) 
-         .then(({user}) => renderPopUp(user))  
+      let params = new URLSearchParams(document.location.search.substring(1));
+      let id  = params.get("id")
+        Promise.resolve(getUser(id)) 
+        .then(({user}) => renderPopUp(user))  
      }    
      initUser()

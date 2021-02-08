@@ -50,7 +50,7 @@ class Utils extends Users {
             <span>${user.first_name}</span>
             <span>${user.last_name}</span>
           </p>
-          <a href="user.html" data-id="${user.id}" 
+          <a href="#" data-id="${user.id}" 
           class="btn btn-primary user-details" 
           style="position:absolute; bottom:23px">
             Details
@@ -96,7 +96,11 @@ class Utils extends Users {
     if(id === undefined) {
       return
     }
-    window.localStorage.setItem("user", JSON.stringify(id))  
+    var searchParams = new URLSearchParams(window.location.search);
+    searchParams.set("id", `${id}`);
+    var newRelativePathQuery = "user.html" + '?' + searchParams.toString();
+    history.pushState(null, '', newRelativePathQuery);
+    window.location = newRelativePathQuery;
   }
   setPage(e) {
     let id = e.target.dataset.a;
