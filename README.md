@@ -27,10 +27,6 @@ javascript, Node.js, Express.js.
 ```
 npm install
 ```
-Перед началом работы нужно установить веб сервер:
-```
-npm install live-server --save-dev
-```
 Для запуска веб сервер 
 ```
 npm run start:live-server
