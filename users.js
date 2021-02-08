@@ -73,11 +73,11 @@ class Utils extends Users {
   setPaginationButtons(pages, current_page) {
     ul.innerHTML = ""
     ul.addEventListener('click', this.setPage)
+    let li;
     for(let i=1; i < pages; i++) {
-      let li;
       if(current_page === i) {
         li = `
-          <li class="page-item active">
+          <li class="page-item active" data-li="${i}">
             <a href="#" class="page-link" data-a="${i}">${i}</a>
           </li>
         `
@@ -99,15 +99,14 @@ class Utils extends Users {
     var searchParams = new URLSearchParams(window.location.search);
     searchParams.set("id", `${id}`);
     var newRelativePathQuery = "user.html" + '?' + searchParams.toString();
-    history.pushState(null, '', newRelativePathQuery);
     window.location = newRelativePathQuery;
   }
   setPage(e) {
     let id = e.target.dataset.a;
-    let prev_node = document.querySelector(".active")
-    if(prev_node) {
-      prev_node.classList.remove("active")
-    } 
+    if(this.current_page == id) return;
+    for (var item of document.querySelectorAll('.active')) {
+      item.classList.remove('active');  
+    }
     let li = document.querySelector(`[data-li="${id}"]`)
     li.classList.add("active")
     this.current_page = id;  
