@@ -1,5 +1,6 @@
 {
     "hello": "你好",
+    "test": "测试",
     "word": "单词",
-    "test": "测试"
+    "test how is working webhooks": "测试 webhooks 是如何工作的"
 }
