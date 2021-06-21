@@ -138,14 +138,11 @@ const initUsers =
 
 
 // let callPoeditor = function() {
-//   fetch('http://127.0.0.1:5500/v2/projects/view', {
+//   fetch('http://127.0.0.1:5500/webhooks/d06279102d', {
 //     method:'POST',
 //     headers: {
-//       "access_token": '82838cfab331c6271ce0f14426907d7c',
-//       "accepts":"application/json",
-//       'Origin': '',
-//       'Content-Type': 'application/x-www-form-urlencoded',
-//       'Host': 'api.producthunt.com'
+//       "Authorization": '82838cfab331c6271ce0f14426907d7c',
+//       "accepts":"application/json"
 //     }
 //   },
 //   (res) => {
