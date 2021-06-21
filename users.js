@@ -136,3 +136,23 @@ const initUsers =
     utils.renderUserCard()
   }
 
+
+// let callPoeditor = function() {
+//   fetch('http://127.0.0.1:5500/v2/projects/view', {
+//     method:'POST',
+//     headers: {
+//       "access_token": '82838cfab331c6271ce0f14426907d7c',
+//       "accepts":"application/json",
+//       'Origin': '',
+//       'Content-Type': 'application/x-www-form-urlencoded',
+//       'Host': 'api.producthunt.com'
+//     }
+//   },
+//   (res) => {
+//     console.log(res)
+//   },
+//   (err) => {
+//     console.log(err)
+//   })
+// }
+// callPoeditor()
